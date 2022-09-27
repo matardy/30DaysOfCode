@@ -11,8 +11,15 @@ Este reto consiste en generar la serie de fibonacci controlando la posición de 
 Para resolver este problema hemos creado 3 funciones diferentes que se encuentran documentadas en el codigo.
 
 ---
+| Función | Descripción |
+| --- | --- |
+|```fibonacci(n:int)->int```| Hace uso del concepto de recursividad para calcular los elemento de la sucesión, tomando en cuenta que el siguiente elemento de la sucesión es resultado de la suma de sus dos elementos anteriores.| 
 
-```fibonacci(n:int)->int```: Hace uso del concepto de recursividad para calcular los elemento de la sucesión, tomando en cuenta que el siguiente elemento de la sucesión es resultado de la suma de sus dos elementos anteriores.
+
+
+:
+
+ Hace uso del concepto de recursividad para calcular los elemento de la sucesión, tomando en cuenta que el siguiente elemento de la sucesión es resultado de la suma de sus dos elementos anteriores.
 
 ---
 
