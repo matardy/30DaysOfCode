@@ -21,17 +21,17 @@ Para resolver este problema hemos creado 3 funciones diferentes que se encuentra
 
 
 
+---
+### No te queda completamente claro? :confounded:
+**Revisa este video de TikTok donde te lo explico mejor:** 
 
 
 
-Puedes encontrar a la AEIS en redes sociales como: ```@aeis_epn```
+Puedes encontrar a la AEIS en redes sociales como: [```@aeis_epn```](https://www.instagram.com/aeis_epn/)
 
 
 
-```
-def hashtags():
-    #30DaysOfCode
-    #30DaysOfCodeByAEIS
-    #30DoCodeAEIS
-    #30DaysAEIS
-```
+`#30DaysOfCode #30DaysOfCodeByAEIS #30DoCodeAEIS #30DaysAEIS`
+
+
+
