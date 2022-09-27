@@ -17,7 +17,7 @@ Necesitamos hacer lo siguiente:
 ### Descripción de la solución :smiling_imp:
 Para resolver este problema hemos creado 3 funciones diferentes que se encuentran documentadas en el codigo.
 
-| Función <div style="width:250px"></div> | Descripción |
+| Función <div style="width:300px"></div> | Descripción |
 | --- | :--- |
 |`count_letters(string:str)->int`| Recibe una cadena de caracteres y retorna el numero de letras en dicha cadena. Basicamente genera una lista de letras apartir de una list comprehensions validando los valores con el metodo `isalpha(): Valida si un caracter pertenece o no al alfabeto`| 
 |`count_numbers(string:str)->int`|Recibe una cadena de caracteres y retorna la cantidad de numeros en la cadena, valida los caracteres con el metodo `isnumeric()`|
