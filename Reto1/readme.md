@@ -7,7 +7,7 @@ En matemáticas la sucesión de fibonacci resulta ser bastante conocida debido a
 
 Este reto consiste en generar la serie de fibonacci controlando la posición de los elementos de la misma. 
 
-### Descripción de tu solución 
+### Descripción de la solución 
 Para resolver este problema hemos creado 3 funciones diferentes que se encuentran documentadas en el codigo.
 
 ---
