@@ -1,4 +1,4 @@
-# DÍA 1
+# DÍA 2
 ## Strings, Strings y más Strings
 ### Descripción del problema :kissing:
 **Resuelto por:** [Gutemberg S. Mendoza](linkedin.com/in/gutembergsmendoza)
@@ -21,9 +21,9 @@ Para resolver este problema hemos creado 3 funciones diferentes que se encuentra
 | --- | :--- |
 |`count_letters(string:str)->int`| Recibe una cadena de caracteres y retorna el numero de letras en dicha cadena. Basicamente genera una lista de letras apartir de una list comprehensions validando los valores con el metodo `isalpha(): Valida si un caracter pertenece o no al alfabeto`| 
 |`count_numbers(string:str)->int`|Recibe una cadena de caracteres y retorna la cantidad de numeros en la cadena, valida los caracteres con el metodo `isnumeric()`|
-|count_this(string:str, matching_char:str)->int|Recibe un caracter y una cadena de caracteres, luego valida cuantos caracteres hay que hacen match con el caracter ingresado por el usuario, valida los caracteres con la función  `find_char`|
+|`count_this(string:str, matching_char:str)->int`|Recibe un caracter y una cadena de caracteres, luego valida cuantos caracteres hay que hacen match con el caracter ingresado por el usuario, valida los caracteres con la función  `find_char`|
 |`count_numbers(string:str)->int`|Recibe una cadena de caracteres y retorna la cantidad de numeros en la cadena, valida los caracteres con el metodo `isnumeric()`|
-|find_char(char:str, match:str)->bool|Valida si un caracter es igual a otro|
+|`find_char(char:str, match:str)->bool`|Valida si un caracter es igual a otro|
 
 
 
