@@ -1,6 +1,6 @@
 # DÍA 1
 ## Sucesión de Fibonacci 
-### Descripción del problema
+### Descripción del problema :kissing:
 **Resuelto por:** [Gutemberg S. Mendoza](linkedin.com/in/gutembergsmendoza)
 
 En matemáticas la sucesión de fibonacci resulta ser bastante conocida debido a sus distintas aplicaciones y relación con fenomenos naturales.
@@ -9,7 +9,7 @@ Este reto consiste en generar la serie de fibonacci controlando la posición de 
 
 ---
 
-### Descripción de la solución 
+### Descripción de la solución :smiling_imp:
 Para resolver este problema hemos creado 3 funciones diferentes que se encuentran documentadas en el codigo.
 
 | Función <div style="width:250px"></div> | Descripción |
@@ -23,7 +23,8 @@ Para resolver este problema hemos creado 3 funciones diferentes que se encuentra
 
 ---
 ### No te queda completamente claro? :confounded:
-**Revisa este video de TikTok donde te lo explico mejor:** 
+**Revisa este video de TikTok donde te lo explico mejor :** 
+*Efectivamente aquí explico la recursión* :flushed:
 
 
 
