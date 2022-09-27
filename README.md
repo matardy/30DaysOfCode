@@ -1,11 +1,14 @@
 # 30DaysOfCode 
 
-Este repositorio contiene una carpeta por cada reto. 
+Este repositorio contiene una carpeta por cada problema planteado.
 
 ## Estructura de una carpeta
-- `RetoN` 
-- `RetoN/main.py`
-- `RetoN/readme.md `
+- `Reto1 (carpeta principal)` 
+- `Reto1/main.py`
+- `Reto1/readme.md `
+
+## Explicación adicional
+Además de la documentación en el codigo de cada reto y el `readme.md` que se encuentra en la carpeta de cada reto, he creado explicaciones más dinamicas en [Tiktok](https://www.tiktok.com/@steveeeeess).
 
 
 
