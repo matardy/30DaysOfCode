@@ -10,7 +10,7 @@ Este repositorio contiene una carpeta por cada problema planteado.
 ## Explicación adicional
 Además de la documentación en el codigo de cada reto y el `readme.md` que se encuentra en la carpeta de cada reto, he creado explicaciones más dinamicas en [Tiktok](https://www.tiktok.com/@steveeeeess).
 <p align="center">
-<img src="https://github.com/matardy/30DaysOfCode/blob/main/tiktokUser.jpeg" width = "325" height = "230">
+<img src="https://github.com/matardy/30DaysOfCode/blob/main/tiktokUser.jpeg">
 </p>
 
 
