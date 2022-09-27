@@ -41,5 +41,8 @@ Puedes encontrar a la AEIS en redes sociales como: [```@aeis_epn```](https://www
 
 `#30DaysOfCode #30DaysOfCodeByAEIS #30DoCodeAEIS #30DaysAEIS`
 
+<a href="https://www.linkedin.com/in/gutembergsmendoza/">
+    <img align="left" alt="Gutemberg S. Mendoza | LinkedIn " width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
+  </a>
 
 
