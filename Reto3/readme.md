@@ -3,27 +3,57 @@
 ### Descripción del problema :kissing:
 **Resuelto por:** [Gutemberg S. Mendoza](linkedin.com/in/gutembergsmendoza)
 
-Dada una cadena de caracteres, por ejemplo: `4$$E&95KPfjT$%TJ7#6T2%tcnS#3$^`, en donde tenemos caracteres especiales, letras y numeros. 
+Vamos a imaginar que Lucho Almeida, un humilde trabajador del campo tiene que pintar ciertas casas. Lucho ha armado un mapa con las cordenadas de las casas a donde tiene que ir. 
 
-Necesitamos hacer lo siguiente: 
+Además también ha anotado cuanto tiempo le tarda cada trabajo. 
 
-1. 🧑‍💻 Programa un bloque o función que retorne la cantidad de letras que existe en la cadena.
-2. 👩‍💻 Programa un bloque o función que retorne la cantidad de dígitos que existe en la cadena.
-3. 🧑‍💻 Dado un caracter ingresado por el usuario, el algoritmo debe contar cuantas veces se repite este caracter.
-
+Lucho nos ha entregado un mapa 2D como vemos en la figura de abajo y él se encuentra interesado en que creemos un algoritmo que: 
+1. Calcule la ruta de acuerdo a la distancia de dos puntos teniendo en cuenta que: 
+    - Lucho puede elegir iniciar en cualquier punto aleatoriamente. 
+    - La siguiente casa a la que irá lucho será la más cercana a la que se encuentra. 
+    - A Lucho no le gusta el trabajo doble, es por eso que no visitará la misma casa dos veces.
+2. Calcula en que orden debe visitar las casas Lucho si quiere empezar en la que le toma más tiempo a la que le toma menos tiempo 
 
 ---
 
 ### Descripción de la solución :smiling_imp:
-Para resolver este problema hemos creado 3 funciones diferentes que se encuentran documentadas en el codigo.
+Este problema no es realmente complejo, pero puede ser un reto la crear un codigo de calidad para este reto. 
 
-| Función <div style="width:300px"></div> | Descripción |
-| --- | :--- |
-|`count_letters(string:str)->int`| Recibe una cadena de caracteres y retorna el numero de letras en dicha cadena. Basicamente genera una lista de letras apartir de una list comprehensions validando los valores con el metodo `isalpha(): Valida si un caracter pertenece o no al alfabeto`| 
-|`count_numbers(string:str)->int`|Recibe una cadena de caracteres y retorna la cantidad de numeros en la cadena, valida los caracteres con el metodo `isnumeric()`|
-|`count_this(string:str, matching_char:str)->int`|Recibe un caracter y una cadena de caracteres, luego valida cuantos caracteres hay que hacen match con el caracter ingresado por el usuario, valida los caracteres con la función  `find_char`|
-|`count_numbers(string:str)->int`|Recibe una cadena de caracteres y retorna la cantidad de numeros en la cadena, valida los caracteres con el metodo `isnumeric()`|
-|`find_char(char:str, match:str)->bool`|Valida si un caracter es igual a otro|
+Por lo que vamos a tratar de abstraer el problema al mundo real y hacer nuestro codigo lo más entendible posible. 
+
+Primero, notemos que un Punto en el mapa tiene varias cosas asociadas: 
+    - Una ubicación 
+    - Un tiempo
+    - Un Nombre 
+    - Si un punto ha sido visitado o no por Lucho (Por defecto todos el False)
+Además, tengo operaciones entre puntos como calcular su distancia y comparar sus tiempos etc. 
+
+Lo más eficiente en este caso es crear una clase Point.
+
+Dicha clase va a tener como atributos sus caracteristicas asociadas y metodos de clase entre Objetos Point. 
+
+Finalmente cuando instancie un objeto de la clase Point se verá así: 
+```
+D = Point([-4,4], [0,45], "D")
+    A = Point([-1,1], [2,30], "A")
+    C = Point([2,7], [2,50], "C")
+    B = Point([4,5], [1,0], "B")
+```
+
+En donde en su constructor tenemos las cordenadas, el tiempo, el nombre y por defecto todos los puntos se encuentra en `visited = False` 
+
+Aunque parezca mentira, crear esta clase nos ha ahorrado muchisimo trabajo y ha hecho que los algoritmos sobre un objeto Point se puedan entender mejor. 
+
+---
+
+**El codigo se encuentra correctamente documento, sin embargo aquí te pongo el algoritmo para calcular la ruta (el de tiempo es bastante trivial):** 
+1. El algoritmo recibe una lista de Objetos `Point` y un Objeto `Point` inicial y se inicializa un contador `j=0`
+2. En una variable `work_point` guarda el `Point` inicial
+3. Todos los objetos `Point` que sean `work_point` serán marcados como visitados. 
+4. Guarda las rutas entre `work_point` y los demas `Point` en donde `visited=False` 
+5. Con la funcion `min()` se obtiene el objeto `Point` que tenga la ruta minima con `work_point`.
+6. El objeto `Point` que tenga la ruta minima con el anterior `work_point`, este sera el nuevo `work_point` y ademas se guardara en la lista final de la ruta. 
+7. Se repite hasta que j = len(lista de objetos `Point`)
 
 
 
@@ -32,7 +62,7 @@ Para resolver este problema hemos creado 3 funciones diferentes que se encuentra
 ---
 ### No te queda completamente claro? :confounded:
 **Revisa este video de TikTok donde te lo explico mejor :** 
-*Efectivamente aquí explico list comprehension* :flushed:
+*Efectivamente aquí explico programación orientada a objetos* :flushed:
 
 
 
