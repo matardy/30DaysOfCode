@@ -3,12 +3,24 @@ import math
 
 
 class Point:
-    def __init__(self, location:list, time:list, name:str):
+    """
+        Definimos a un punto como un objeto que tiene asociado su ubicacion (location),
+        tiempo (time), nombre(name) y si dicho punto ha sido visitado por el trabajador.
+
+    """
+    def __init__(self, location:list, time:list, name:str, visited:bool = False):
         self.location = location 
         self.time = time 
         self.name = name
+        self.visited = visited
 
-    def get_time(self):
+    def set_visited(self):
+        self.visited = True
+
+    def is_visited(self): # Por defecto todos los puntos no estan visitados
+        return self.visited
+
+    def get_time(self): # pasamos el tiempo a minutos
         return self.time[0]*60 + self.time[1]
     
     def get_name(self):
@@ -26,7 +38,57 @@ class Point:
 
         return math.sqrt(math.pow(x_2 - x_1,2) + math.pow(y_2 - y_1,2))
 
+    def compare_to(self, work_place:Point): # compara si un objeto es igual a otro por su nombre
+        return self.get_name() == work_place.get_name()
+
+
    
+
+def calculate_path(points:list[Point], first_point:Point)->list(Point):
+    tmp = [] # lista temporal que guarda las comparaciones de punto a punto
+    sorted_list = [first_point] # lista final, siempre inicia con el punto elegido por el usuario
+    work_point = first_point # Punto incial, este es un pivote e ira cambiando segun escoja la ruta
+
+    # Contador
+    j=0
+
+    while j<len(points): # La cantidad de comparaciones sera igual a la cantidad de puntos
+
+        # work_point empieza siendo el punto elegido por el usuario
+        # luego work_point pasa a ser el punto tenga la ruta mas corta al punto inicial.
+        # Es por esto que work_point siempre será un punto visitado
+
+        # Marco a work_point como un punto visitado
+        for i in points:
+            if i.compare_to(work_point):
+                i.set_visited()
+
+        # Guarda las rutas de work_point con respecto a los puntos no visitados en tmp
+        for i in points:
+            if not i.is_visited():
+                tmp.append([i, work_point.get_distance(i)])
+
+        # Verifico si tengo rutas para comparar
+        if len(tmp) != 0 :
+            # De la lista de rutas, escojo la minima
+            min_distance = min(tmp, key=lambda x:x[1])[0]
+            # La minima ruta pasa a ser mi pivote, mi nuevo work_point
+            work_point = min_distance
+            # Guardo los puntos en la lista final
+            sorted_list.append(work_point)
+            # Reinicio la lista de rutas
+            tmp = []
+
+        # aumento el contador
+        j = j+1
+
+    return sorted_list
+
+
+def calculate_path_bytime(points:list(Point))->list(Point):
+    # El tiempo de cada punto esta encalsulado en el objeto Punto, utilizo sorted para ordenar la lista
+    return sorted(points, key =lambda x:x.get_time(), reverse = True)
+
 
 def main():
     D = Point([-4,4], [0,45], "D")
@@ -35,50 +97,13 @@ def main():
     B = Point([4,5], [1,0], "B")
     points = [D,A,C,B]
 
-    print("Ruta por distancia: ")
+    print("Ruta tomando el cuenta el camino: ")
     for i in calculate_path(points, A):
         print(i.get_name())
-
-    print("Ruta por tiempo: ")
+    
+    print("Ruta tomando el cuenta el tiempo: ")
     for i in calculate_path_bytime(points):
         print(i.get_name())
-
-def calculate_path(points:list, first_point:Point)->list(Point):
-    # [D,A,C,B]
-    i = 0
-    tmp = []
-    sorted_list = [first_point]
-    work_point = first_point # Punto inicial, escogido por el usuario
-
-    # Todos los puntos menos el primero, por eso len(points - 1)
-    while i < len(points)-1 :
-
-        # Compara la distancia con los puntos restantes
-        for j in range(i, len(points)):
-            if work_point.get_distance(points[j])!= 0: # Compara con todos los puntos, menos consigo mismo
-                # Guarda los puntos con la distancia hacia work_point
-                # Crea una lista temporal con los nombres de los puntos 
-                # y su distancia a work_point [punto, distancia_a_workpoint]
-                tmp.append([points[j], work_point.get_distance(points[j])])
-
-        # Verifica si ya no hay mas puntos para comprar
-        if len(tmp)!=0:
-            # toma la lista y obtiene la distancia minima [punto, minima_distancia]
-            min_distance = min(tmp, key=lambda x:x[1])[0]
-
-        # actualiza el work_point con la distancia minima
-        work_point = min_distance
-        # completa la lista con el orden de distancia
-        sorted_list.append(work_point)
-        # avanza
-        i = i+1
-        # limpia la lista temporal
-        tmp = []
-
-    return sorted_list
-    
-def calculate_path_bytime(points:list(Point))->list(Point):
-    return sorted(points, key =lambda x:x.get_time(), reverse = True)
 
 
 if __name__ == '__main__':
