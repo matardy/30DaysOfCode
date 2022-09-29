@@ -14,6 +14,9 @@ Lucho nos ha entregado un mapa 2D como vemos en la figura de abajo y él se encu
     - A Lucho no le gusta el trabajo doble, es por eso que no visitará la misma casa dos veces.
 2. Calcula en que orden debe visitar las casas Lucho si quiere empezar en la que le toma más tiempo a la que le toma menos tiempo 
 
+<p align="center">
+<img src="https://github.com/matardy/30DaysOfCode/blob/main/Reto3/image.png">
+</p>
 ---
 
 ### Descripción de la solución :smiling_imp:
