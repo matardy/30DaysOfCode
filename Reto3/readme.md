@@ -25,10 +25,12 @@ Este problema no es realmente complejo, pero puede ser un reto la crear un codig
 Por lo que vamos a tratar de abstraer el problema al mundo real y hacer nuestro codigo lo más entendible posible. 
 
 Primero, notemos que un Punto en el mapa tiene varias cosas asociadas: 
+
     - Una ubicación 
     - Un tiempo
     - Un Nombre 
     - Si un punto ha sido visitado o no por Lucho (Por defecto todos el False)
+    
 Además, tengo operaciones entre puntos como calcular su distancia y comparar sus tiempos etc. 
 
 Lo más eficiente en este caso es crear una clase Point.
